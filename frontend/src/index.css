@@ -1,22 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 *{
-padding: 0;
-margin: 0;
-box-sizing:border-box;
-font-family: Outfit;
-
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Outfit;
+  scroll-behavior: smooth;
 }
+
 body{
   margin: 0;
+  overflow-x: hidden;
 }
+
 a{
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
+
 .app{
-  width: 80%;
-  margin: auto;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Full-width desktop frame with consistent side gutters */
+.app > *:not(.footer) {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+@media (max-width: 900px) {
+  .app > *:not(.footer) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 @keyframes fadeIn {

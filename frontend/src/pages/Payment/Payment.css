@@ -1,0 +1,218 @@
+.payment-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #30313d;
+}
+
+/* LEFT SIDE */
+.payment-left {
+    flex: 0.9;
+    padding: 80px 10%;
+    border-right: 1px solid #e6e6e6;
+}
+
+.payment-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.back-arrow-btn {
+    border: none;
+    background: #f6f9fc;
+    color: #697386;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.course-badge {
+    font-size: 13px;
+    font-weight: 600;
+    color: #30313d;
+}
+
+.test-mode-tag {
+    background: #ffeb3b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.pay-label { color: #697386; margin-bottom: 8px; font-size: 15px; }
+.amount-display { font-size: 42px; font-weight: 700; margin-bottom: 40px; }
+
+.items-summary { margin-bottom: 40px; }
+.summary-item { display: flex; justify-content: space-between; margin-bottom: 24px; }
+.item-details .name { font-weight: 600; font-size: 15px; }
+.item-details .qty, .price-details .unit { color: #697386; font-size: 13px; }
+.price-details { text-align: right; }
+.price-details .total { font-weight: 600; }
+
+.stripe-footer { margin-top: auto; font-size: 12px; color: #aab7c4; display: flex; justify-content: space-between; }
+
+/* RIGHT SIDE (FORM) */
+.payment-right {
+    flex: 1.1;
+    padding: 80px 10%;
+}
+
+.payment-form-box { max-width: 480px; }
+.payment-form-box h2 { font-size: 18px; margin-bottom: 24px; font-weight: 600; }
+
+.form-group { margin-bottom: 24px; }
+.form-group label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 8px; color: #30313d; }
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    font-size: 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02);
+}
+
+/* STRIPE CARD ELEMENT SIMULATION */
+.stripe-card-element {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.02);
+}
+
+.card-number-wrapper {
+    position: relative;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.card-num-input { border: none !important; border-radius: 0 !important; }
+
+.card-brand-icons {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    opacity: 0.6;
+}
+
+.card-brand-icons img { height: 14px; }
+
+.card-extra-wrapper { display: flex; }
+.expiry-input { border: none !important; border-right: 1px solid #e6e6e6 !important; border-radius: 0 !important; flex: 1; }
+
+.cvc-wrapper { position: relative; flex: 1; }
+.cvc-input { border: none !important; border-radius: 0 !important; }
+
+.cvc-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.stripe-pay-button {
+    width: 100%;
+    background-color: #0070f3;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.2s;
+}
+
+.stripe-pay-button:hover { background-color: #0059c1; }
+
+.payment-error {
+    margin-top: 10px;
+    color: #d32f2f;
+    font-size: 14px;
+}
+
+.payment-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.processing-box {
+    background: #0c7bdc;
+    color: #fff;
+    padding: 14px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.threeds-modal {
+    width: min(92vw, 420px);
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.threeds-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 14px;
+    background: #f3f6fb;
+    font-weight: 700;
+    color: #394150;
+}
+
+.threeds-header button {
+    border: none;
+    background: transparent;
+    color: #6b7280;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.threeds-body {
+    padding: 18px 14px;
+    color: #424b57;
+    line-height: 1.5;
+}
+
+.threeds-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 12px 14px 16px;
+}
+
+.threeds-actions button {
+    border: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.fail-btn {
+    background: #e5e7eb;
+    color: #4b5563;
+}
+
+.complete-btn {
+    background: #5b6df6;
+    color: #fff;
+}
